@@ -46,13 +46,12 @@ public class LoanCalc {
 		iterationCounter = 0;
 		while (youGotIt) {
              res = endBalance(loan, rate, n, payment);
-
+             iterationCounter++;
 			 if (res > 0) {
 				payment += epsilon;
 			 } else if (res <= 0) {
-				youGotIt = false;
-			 }
-			 iterationCounter++;
+				break;
+			 } 
 		}
   
     	return payment;
