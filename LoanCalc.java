@@ -49,10 +49,10 @@ public class LoanCalc {
 
 			 if (res > 0) {
 				payment += epsilon;
-				iterationCounter++;
 			 } else if (res < 0) {
 				youGotIt = false;
 			 }
+			 iterationCounter++;
 		}
   
     	return payment;
@@ -71,7 +71,7 @@ public class LoanCalc {
 		double H = loan + 1;
 		double L = payment;
 		double g = (L+H)/2;
-		iterationCounter = 1;
+		iterationCounter = 0;
 
 		while ( (H-L) > epsilon ) {
 
@@ -96,9 +96,8 @@ public class LoanCalc {
         double r = 1+(rate/100);
 		
 		for (int i = 1; i <= n; i++) {
-			remaining_balance = (remaining_balance - loan) * r;
+			remaining_balance = (remaining_balance - payment) * r;
 		}
     	return remaining_balance;
 	}
-
 }
