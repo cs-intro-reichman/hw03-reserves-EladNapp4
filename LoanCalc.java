@@ -49,7 +49,7 @@ public class LoanCalc {
 
 			 if (res > 0) {
 				payment += epsilon;
-			 } else if (res < 0) {
+			 } else if (res <= 0) {
 				youGotIt = false;
 			 }
 			 iterationCounter++;
