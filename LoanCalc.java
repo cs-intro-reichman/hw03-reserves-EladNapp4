@@ -43,7 +43,7 @@ public class LoanCalc {
 		double payment = loan/n;
 		boolean youGotIt = true;
 		double res = 0;
-
+		iteretionCounter = 0;
 		while (youGotIt) {
              res = endBalance(loan, rate, n, payment);
 
